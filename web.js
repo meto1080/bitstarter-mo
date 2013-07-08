@@ -7,7 +7,7 @@ fs.readFile('index.html', function (err, data) {
                 console.log(data);
 });
 
-app.get('/', function(request, response) {
+app.get('/index.html', function(request, response) {
   	response.send('Hello World3!');
 	console.log('test');
 });
