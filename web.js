@@ -2,12 +2,13 @@ var fs = require('fs');
 var express = require('express');
 
 var app = express.createServer(express.logger());
-	app.get('/', function(request, response) {
-		fs.readFile('/etc/passwd', function (err, data) {
+app.get('/', function(request, response) {
+	var fs = require('fs');
+	fs.readFile('/etc/passwd', function (err, data) {
   		if (err) throw err;
   		console.log(data);
   	});
-  response.send('Hello World2!');
+  	response.send('Hello World2!');
 });
 
 var port = process.env.PORT || 5000;
